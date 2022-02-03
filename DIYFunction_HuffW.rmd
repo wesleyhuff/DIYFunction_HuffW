@@ -1,0 +1,58 @@
+---
+title: "DIYFunction_HuffW"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. Write a function that prints out a statement of whether the number passed as an argument is positive, negative or 0. 
+2. Write a function that returns the absolute value of the number passed as an argument.
+   + Don't use `abs()`. Use the flow from problem 1 and multiply by negative one as necessary. 
+3. Hard mode: add an error check to that function that prints out the string "Please pass a numerical value to this function" if the user passes the function a string. 
+   + There are functions that check and return T/F: `is.numeric()` or `is.character()` would be relevant here
+
+
+```{r}
+number_sign <- function(number){
+  if (number > 0){
+    print("Your number is positive!")
+  }
+  else if (number == 0){
+    print("Your number is zero!")
+  }
+  else {
+    print("Your number is negative!")
+  }
+}
+
+number_sign(number = -7)
+number_sign(0)
+number_sign(7)
+
+```
+
+```{r}
+absolute_value <- function(number){
+  if (number < 0){
+    return(number*(-1))
+  }
+  else if (!is.numeric(number)){
+    return("Please pass a numerical value to this function!")
+  }
+  else{
+    return(number)
+  }
+}
+
+absolute_value(-7)
+absolute_value(0)
+absolute_value(7)
+absolute_value("Yo!")
+
+```
+```{r}
+
+```
+
